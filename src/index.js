@@ -6,13 +6,15 @@ import ReactDOM from 'react-dom';
 const App = () => {
     // const buttonText = "Click Me!"; // OK to reference in JSX
     // const buttonNums = 12345; // OK to reference in JSX
-    const buttonArrays = ["Hi", "There"]; // OK to reference in JSX
+    // const buttonArrays = ["Hi", "There"]; // OK to reference in JSX
+    const buttonText = { text: 'Click Me!' }; // ERROR: NOT OK to reference in JSX because this is an object.
+    // We are not allowed to take a JS Object and reference it inside JSX.
 
     return (
         <div>
             <label className="label" htmlFor="name">Enter Name:</label>
             <input id="name" type="text"/>
-            <button style={{ backgroundColor: 'blue', color: 'white'}}>{buttonArrays}</button>
+            <button style={{ backgroundColor: 'blue', color: 'white'}}>{buttonText}</button>
         </div>
     );
 };
